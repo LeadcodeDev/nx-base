@@ -1,7 +1,7 @@
 import { LinkItem } from '@nx-base/contracts';
 import { classNames } from '@nx-base/helpers';
 import { ReactElement } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export function BackofficeSidebarLinkItem(props: { item: LinkItem }): ReactElement {
   const location = useLocation()
@@ -13,15 +13,15 @@ export function BackofficeSidebarLinkItem(props: { item: LinkItem }): ReactEleme
 
   return (
     <div className="p-2 flex h-14 w-14 items-center justify-center">
-      <a
-        href={props.item.href}
+      <Link
+        to={props.item.href!}
         className={classNames(
           'flex items-center justify-center w-full h-full aspect-square rounded-md',
           isActive ? 'bg-blue-400 text-white' : 'bg-white hover:bg-blue-300',
         )}
       >
         <i className={classNames('radix-icon', props.item.icon)}></i>
-      </a>
+      </Link>
     </div>
   )
 }
