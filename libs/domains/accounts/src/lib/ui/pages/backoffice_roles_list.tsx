@@ -2,11 +2,11 @@ import { ReactElement } from 'react';
 import { BackofficeSubsection } from '@nx-base/ui';
 import { accountSubsection } from '../../config';
 
-export function BackofficeUsersList(): ReactElement {
+export function BackofficeRolesList(): ReactElement {
   return (
     <div className="p-3">
       <BackofficeSubsection
-        title="Accounts"
+        title="Roles"
         items={accountSubsection}
       />
     </div>

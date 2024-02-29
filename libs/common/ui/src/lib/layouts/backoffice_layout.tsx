@@ -8,10 +8,9 @@ type Props = {
 
 export function BackofficeLayout(props: PropsWithChildren<Props>): ReactElement {
   return (
-    <div className="min-h-screen w-full flex bg-gray-100">
+    <div className="min-h-screen w-full flex bg-gray-200">
       <BackofficeSidebar items={props.items} />
       <div className="flex-1">
-        <h1>Backoffice Layout</h1>
         {props.children}
       </div>
     </div>

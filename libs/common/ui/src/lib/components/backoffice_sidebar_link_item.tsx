@@ -12,7 +12,7 @@ export function BackofficeSidebarLinkItem(props: { item: LinkItem }): ReactEleme
     : location?.pathname.startsWith(props.item.match ?? props.item.href!)
 
   return (
-    <div className="p-2 flex h-14 w-14 items-center justify-center">
+    <div className="p-2 mx-auto flex h-14 w-14 items-center justify-center">
       <Link
         to={props.item.href!}
         className={classNames(

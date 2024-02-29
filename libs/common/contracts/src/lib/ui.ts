@@ -5,3 +5,8 @@ export type LinkItem = {
   match?: string
   exact: boolean
 }
+
+export type BackofficeSubsectionLink = {
+  label: string
+  href: string
+}
