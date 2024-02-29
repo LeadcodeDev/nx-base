@@ -5,7 +5,8 @@ import { BackofficeSubsectionLink } from '@nx-base/contracts';
 
 type Props = {
   title: string
-  items: BackofficeSubsectionLink[]
+  links: BackofficeSubsectionLink[]
+  actions?: ReactElement[]
 }
 
 export function BackofficeSubsection(props: Props): ReactElement {
@@ -16,21 +17,26 @@ export function BackofficeSubsection(props: Props): ReactElement {
       <div className="border-b border-gray-200 p-5">
         <h1 className="text-4xl">{props.title}</h1>
       </div>
-      <div className="flex gap-x-5 px-5">
-        {props.items.map((item) => (
-          <Link
-            to={item.href}
-            key={item.href}
-            className={classNames(
-              'px-3 pt-5 h-14 border-b-2 font-medium',
-              location.pathname === item.href
-                ? 'border-blue-400'
-                : 'border-neutral-300 hover:border-blue-400 text-neutral-500',
-            )}
-          >
-            {item.label}
-          </Link>
-        ))}
+      <div className="flex justify-between px-5">
+        <div className="flex gap-x-5">
+          {props.links.map((link) => (
+            <Link
+              to={link.href}
+              key={link.href}
+              className={classNames(
+                'px-3 pt-5 h-14 border-b-2 font-medium',
+                location.pathname === link.href
+                  ? 'border-blue-400'
+                  : 'border-neutral-300 hover:border-blue-400 text-neutral-500',
+              )}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+        <div className="flex items-center">
+          {props.actions}
+        </div>
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ export function BackofficeRolesList(): ReactElement {
     <div className="p-3">
       <BackofficeSubsection
         title="Roles"
-        items={accountSubsection}
+        links={accountSubsection}
       />
     </div>
   )

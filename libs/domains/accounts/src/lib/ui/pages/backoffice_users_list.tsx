@@ -1,14 +1,23 @@
 import { ReactElement } from 'react';
-import { BackofficeSubsection } from '@nx-base/ui';
+import { BackofficeContainer, BackofficeSubsection, Button } from '@nx-base/ui';
 import { accountSubsection } from '../../config';
 
 export function BackofficeUsersList(): ReactElement {
   return (
-    <div className="p-3">
+    <div className="flex flex-col gap-3 p-3">
       <BackofficeSubsection
         title="Accounts"
-        items={accountSubsection}
+        links={accountSubsection}
+        actions={[
+          <Button.Link href="/">
+            Create
+          </Button.Link>
+        ]}
       />
+
+      <BackofficeContainer>
+        dd
+      </BackofficeContainer>
     </div>
   )
 }
