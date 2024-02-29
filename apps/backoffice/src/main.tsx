@@ -1,7 +1,10 @@
-import { StrictMode } from 'react';
-import * as ReactDOM from 'react-dom/client';
+import { StrictMode } from 'react'
+import * as ReactDOM from 'react-dom/client'
 
-import App from './app/app';
+import '@unocss/reset/tailwind-compat.css'
+import 'virtual:uno.css'
+
+import App from './app'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
