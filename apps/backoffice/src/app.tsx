@@ -1,7 +1,7 @@
 import { BackofficeLayout } from '@nx-base/ui';
 import { LinkItem } from '@nx-base/contracts';
 import { Outlet } from 'react-router-dom';
-import { homePage } from './router';
+import { account, homePage } from './router';
 
 export default function App() {
   const items: LinkItem[] = [
@@ -14,8 +14,8 @@ export default function App() {
     {
       title: 'Users',
       icon: 'i-radix-icons-person',
-      href: 'console.accounts.users.index',
-      match: '/console/accounts',
+      href: account.users.list.path,
+      match: account.users.list.path,
       exact: false,
     },
   ]

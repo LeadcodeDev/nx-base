@@ -1,1 +1,1 @@
-export * from './lib/accounts';
+export * from './lib/ui/pages/backoffice_users_list'
