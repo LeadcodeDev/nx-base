@@ -13,7 +13,7 @@ export function TableContainer<T>(props: TableProps<T>): ReactElement {
   return (
     <div>
       <table className="min-w-full divide-y divide-gray-300">
-        <TableHeader heading={['name', 'title', 'email', 'role']} />
+        <TableHeader heading={props.heading} />
         <TableBody
           data={props.data}
           row={props.row}

@@ -7,3 +7,5 @@ export const Table = {
   Header: TableHeader,
   Body: TableBody,
 }
+
+export type { TableProps } from './table_container'

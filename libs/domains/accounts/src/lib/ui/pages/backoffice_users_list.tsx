@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { BackofficeContainer, BackofficeSubsection, Button, Table } from '@nx-base/ui';
+import { BackofficeContainer, BackofficeSubsection, Button, Table, TableProps } from '@nx-base/ui';
 import { accountSubsection } from '../../config';
 
 export function BackofficeUsersList(): ReactElement {
@@ -8,11 +8,11 @@ export function BackofficeUsersList(): ReactElement {
     { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@exampfle.com', role: 'Member' },
   ]
 
-  const config = {
+  const tableConfig: TableProps<any> = {
     heading: ['name', 'title', 'email', 'role'],
     data: people,
     actions: () => <Button.Link href="/">Create</Button.Link>,
-    row: (person: any) => [
+    row: (person) => [
       <p>{person.name}</p>,
       <p>{person.title}</p>,
       <p>{person.email}</p>,
@@ -33,7 +33,7 @@ export function BackofficeUsersList(): ReactElement {
       />
 
       <BackofficeContainer className="px-0">
-        <Table.Container {...config} />
+        <Table.Container {...tableConfig} />
       </BackofficeContainer>
     </div>
   )
