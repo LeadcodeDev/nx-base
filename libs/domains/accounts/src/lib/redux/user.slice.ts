@@ -1,5 +1,4 @@
-import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '@nx-base/redux'
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit/react'
 import { UserModel } from '../contracts/user_model'
 import { UserState } from '../contracts/user_state';
 

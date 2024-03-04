@@ -1,4 +1,4 @@
-import { createApi } from '@reduxjs/toolkit/query'
+import { createApi } from '@reduxjs/toolkit/query/react'
 import { baseQuery } from '@nx-base/redux'
 
 export const userApi = createApi({
@@ -6,8 +6,15 @@ export const userApi = createApi({
   baseQuery,
   tagTypes: ['users'],
   endpoints: (builder) => ({
-    getUser: builder.query<void, void>({
+    getUser: builder.query<any, void>({
       query: () => `/authentication/me`
+    }),
+    login: builder.mutation<any, { username: string, password: string }>({
+      query: (credentials) => ({
+        url: `/authentication/login`,
+        method: 'POST',
+        body: credentials
+      })
     })
   })
 })

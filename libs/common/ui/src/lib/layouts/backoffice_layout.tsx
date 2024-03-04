@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactElement } from 'react';
 import { BackofficeSidebar } from '../components/backoffice_sidebar';
 import { LinkItem } from '@nx-base/contracts';
+import { StoreProvider } from '../providers/store_provider';
 
 type Props = {
   items: LinkItem[];
@@ -8,11 +9,13 @@ type Props = {
 
 export function BackofficeLayout(props: PropsWithChildren<Props>): ReactElement {
   return (
-    <div className="min-h-screen w-full flex bg-gray-200">
-      <BackofficeSidebar items={props.items} />
-      <div className="flex-1">
-        {props.children}
+    <StoreProvider>
+      <div className="min-h-screen w-full flex bg-gray-200">
+        <BackofficeSidebar items={props.items} />
+        <div className="flex-1">
+          {props.children}
+        </div>
       </div>
-    </div>
+    </StoreProvider>
   )
 }
