@@ -18,6 +18,7 @@
       "@nx-base/accounts": ["libs/domains/accounts/src/index.ts"],
       "@nx-base/contracts": ["libs/common/contracts/src/index.ts"],
       "@nx-base/helpers": ["libs/common/helpers/src/index.ts"],
+      "@nx-base/redux": ["libs/common/redux/src/index.ts"],
       "@nx-base/ui": ["libs/common/ui/src/index.ts"]
     }
   },
