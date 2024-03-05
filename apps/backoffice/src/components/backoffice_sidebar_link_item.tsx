@@ -14,7 +14,7 @@ export function BackofficeSidebarLinkItem(props: { item: LinkItem }): ReactEleme
   return (
     <div className="p-2 mx-auto flex h-14 w-14 items-center justify-center">
       <Link
-        to={props.item.href!}
+        to={props.item.href as string}
         className={classNames(
           'flex items-center justify-center w-full h-full aspect-square rounded-md',
           isActive ? 'bg-blue-400 text-white' : 'bg-white hover:bg-blue-300',

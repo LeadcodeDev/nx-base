@@ -28,4 +28,4 @@ export const userSlice = createSlice({
 export const userReducer = userSlice.reducer
 export const userActions = userSlice.actions
 
-export const getUserState = (root: RootState) => root[USER_KEY]
+export const getUserState = (root: never) => root[USER_KEY]

@@ -1,12 +1,11 @@
-import { PropsWithChildren, ReactElement } from 'react';
-import { BackofficeSidebar } from '../components/backoffice_sidebar';
+import { PropsWithChildren, ReactElement } from 'react'
+import { StoreProvider } from '../providers/store_provider'
+import { BackofficeSidebar } from '../components/backoffice_sidebar'
 import { LinkItem } from '@nx-base/contracts';
-import { StoreProvider } from '../providers/store_provider';
 
 type Props = {
   items: LinkItem[];
 }
-
 export function BackofficeLayout(props: PropsWithChildren<Props>): ReactElement {
   return (
     <StoreProvider>

@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import { BackofficeSubsection } from '@nx-base/ui';
-import { accountSubsection } from '../../config';
+import { accountSubsection } from '../../config'
+import { BackofficeSubsection } from '@nx-base/ui'
 
 export function BackofficeRolesList(): ReactElement {
   return (

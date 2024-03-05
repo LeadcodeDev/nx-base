@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
-import { combineReducers, configureStore } from '@reduxjs/toolkit/react';
+import { combineReducers, configureStore } from '@reduxjs/toolkit/react'
 import { userApi, userReducer } from '@nx-base/accounts'
-import { Provider } from 'react-redux';
+import { Provider } from 'react-redux'
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -9,7 +9,6 @@ const rootReducer = combineReducers({
 })
 
 export function StoreProvider(props: PropsWithChildren) {
-
   const store = configureStore({
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>

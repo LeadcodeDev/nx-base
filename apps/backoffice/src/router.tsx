@@ -1,17 +1,16 @@
-import { createBrowserRouter, RouteObject } from 'react-router-dom';
-import Dashboard from './pages/dashboard';
-import App from './app';
-import { BackofficeRolesList, BackofficeUsersList } from '@nx-base/accounts';
+import { RouterProps } from '@nx-base/contracts';
+import DashboardPage from './pages/dashboard_page';
 
-export const homePage: RouteObject = { path: '/', element: <Dashboard /> }
-
-export default createBrowserRouter([
+export const routes: RouterProps[] = [
+  // {
+  //   path: '/accounts/*',
+  //   component: <PageAccounts />,
+  //   layout: true,
+  //   protected: true
+  // },
   {
-    element: <App />,
-    children: [
-      { path: '/accounts/users', element: <BackofficeUsersList /> },
-      { path: '/accounts/roles', element: <BackofficeRolesList /> },
-      homePage,
-    ],
+    path: '/*',
+    component: <DashboardPage />,
+    protected: true,
   },
-]);
+]

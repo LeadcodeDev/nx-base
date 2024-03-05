@@ -1,1 +1,1 @@
-export * from './lib/auth';
+export * from './lib/components/protected_routes'
