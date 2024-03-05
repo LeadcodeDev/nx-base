@@ -5,7 +5,6 @@ import { Dropdown } from '@nx-base/ui';
 import * as Avatar from '@radix-ui/react-avatar'
 import { getUserState } from '@nx-base/accounts';
 import { useSelector } from 'react-redux';
-import { classNames } from '@nx-base/helpers';
 import { Menu } from '@headlessui/react';
 import { useOidc } from '@axa-fr/react-oidc';
 
@@ -20,8 +19,19 @@ export function BackofficeSidebar(props: Props): ReactElement {
     <div className="sticky top-0 left-0 h-screen w-16 bg-white border-r border-gray-200">
       <div className="flex flex-col justify-between h-full">
         <div className="flex flex-col">
-          <div className="flex items-center justify-center h-14 aspect-square">
-            Icon
+          <div className="p-2 mx-auto flex h-14 w-14 items-center justify-center">
+            <Avatar.Root className="inline-flex bg-gray-400 select-none items-center justify-center overflow-hidden rounded-lg align-middle">
+              <Avatar.Image
+                className="h-full w-full rounded-[inherit] object-cover"
+                src="https://via.placeholder.com/150x150"
+                alt="Organization logo"
+              />
+              <Avatar.Fallback
+                className="leading-1 flex h-full w-full items-center justify-center bg-gray-200 text-[15px] font-medium"
+                delayMs={600}
+              >
+              </Avatar.Fallback>
+            </Avatar.Root>
           </div>
           <div>
             {props.items.map((item: LinkItem, index) => (
@@ -32,18 +42,14 @@ export function BackofficeSidebar(props: Props): ReactElement {
         <div className="flex items-center justify-center pb-5">
           <Dropdown trigger={<AvatarTrigger />}>
             <Menu.Item>
-              {({ active }) => (
-                <button
-                  type="button"
-                  onClick={() => logout()}
-                  className={classNames(
-                    active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                    'block w-full px-4 py-2 text-left text-sm'
-                  )}
-                >
-                  Sign out
-                </button>
-              )}
+              <button
+                type="button"
+                onClick={() => logout()}
+                className="flex items-center gap-x-2 bg-white hover:bg-gray-200 block w-full px-4 py-2 text-left text-sm"
+              >
+                <div className="i-radix-icons:exit w-1em h-1em"></div>
+                Sign out
+              </button>
             </Menu.Item>
           </Dropdown>
         </div>
