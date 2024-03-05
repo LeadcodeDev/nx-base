@@ -5,7 +5,6 @@ export const routes: RouterProps[] = [
   // {
   //   path: '/accounts/*',
   //   component: <PageAccounts />,
-  //   layout: true,
   //   protected: true
   // },
   {

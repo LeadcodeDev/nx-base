@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react'
-import { baseQuery } from '@nx-base/redux'
+import { baseQuery } from '@nx-base/helpers'
 
 export const userApi = createApi({
   reducerPath: 'userApi',

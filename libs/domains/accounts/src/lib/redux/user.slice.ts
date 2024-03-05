@@ -1,6 +1,7 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit/react'
 import { UserModel } from '../contracts/user_model'
 import { UserState } from '../contracts/user_state';
+import { RootState } from '@nx-base/redux';
 
 export const USER_KEY = 'user'
 export const userAdapter = createEntityAdapter<UserModel>()
@@ -22,10 +23,9 @@ export const userSlice = createSlice({
       state.token = action.payload.token
     },
   },
-  extraReducers: (builder) => {}
 })
 
 export const userReducer = userSlice.reducer
 export const userActions = userSlice.actions
 
-export const getUserState = (root: never) => root[USER_KEY]
+export const getUserState = (root: RootState) => root[USER_KEY]
