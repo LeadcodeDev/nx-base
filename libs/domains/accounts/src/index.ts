@@ -1,5 +1,5 @@
-export * from './lib/ui/pages/backoffice_users_list'
-export * from './lib/ui/pages/backoffice_roles_list'
+export * from './lib/ui/pages/backoffice_users_list_page'
+export * from './lib/ui/pages/backoffice_roles_list_page'
 export * from './lib/config'
 
 export * from './lib/contracts/user_state'
