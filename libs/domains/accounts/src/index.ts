@@ -4,6 +4,7 @@ export * from './lib/config'
 
 export * from './lib/contracts/user_state'
 export * from './lib/contracts/user_model'
+export * from './lib/contracts/role_model'
 export * from './lib/contracts/jwt_model'
 
 export * from './lib/redux/user'

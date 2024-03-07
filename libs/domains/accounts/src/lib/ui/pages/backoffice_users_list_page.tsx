@@ -12,6 +12,8 @@ import {
 import { accountSubsection } from '../../config';
 import { MenuButton as HeadlessMenuButton } from '@headlessui/react'
 import { useGetUsersQuery } from '../../redux/user';
+import { UserModel } from '../../contracts/user_model';
+import { RoleModel } from '../../contracts/role_model';
 
 export function BackofficeUsersListPage(): ReactElement {
   const { data: users, isLoading } = useGetUsersQuery({ page: 1, size: 30 })
@@ -45,14 +47,16 @@ export function BackofficeUsersListPage(): ReactElement {
               </TableRow>
             </TableHead>
             <TableBody>
-              {users?.data.map((user, index) => (
-                <TableRow key={index}>
+              {users?.data.map((user: UserModel) => (
+                <TableRow key={user.username}>
                   <TableCell className="max-w-20 font-medium">
                     {user.firstname} {user.lastname}
                   </TableCell>
                   <TableCell>{user.email}</TableCell>
                   <TableCell>
-                    <Badge>{user.role}</Badge>
+                    {user.roles.map((role: RoleModel) => (
+                      <Badge>{role.name}</Badge>
+                    ))}
                   </TableCell>
                   <TableCell className="flex items-center justify-end">
                     <Dropdown>
