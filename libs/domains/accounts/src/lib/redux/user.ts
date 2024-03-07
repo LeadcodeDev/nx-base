@@ -9,6 +9,9 @@ export const userApi = createApi({
     getUser: builder.query<any, void>({
       query: () => `/authentication/me`
     }),
+    getUsers: builder.query<any, { page: number, size: number }>({
+      query: () => '/users'
+    }),
     login: builder.mutation<any, { username: string, password: string }>({
       query: (credentials) => ({
         url: `/authentication/login`,
@@ -19,4 +22,4 @@ export const userApi = createApi({
   })
 })
 
-export const {  } = userApi
+export const { useGetUsersQuery } = userApi
