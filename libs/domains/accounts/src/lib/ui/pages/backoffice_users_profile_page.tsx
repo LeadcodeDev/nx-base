@@ -35,7 +35,7 @@ export function BackofficeUsersProfilePage(): ReactElement {
         />
 
         <form onSubmit={handleSubmit}>
-          <BackofficeContainer className="py-10">
+          <BackofficeContainer className="py-10 min-h-200">
             <div className="mx-auto max-w-5xl">
               <div className="grid grid-cols-6 gap-5">
                 <div className="col-span-2">
