@@ -9,7 +9,7 @@ export const Select = forwardRef<HTMLSelectElement, HeadlessSelectProps>(functio
   return (
     <span
       data-slot="control"
-      className={classNames([
+      className={classNames(
         className,
 
         // Basic layout
@@ -26,13 +26,13 @@ export const Select = forwardRef<HTMLSelectElement, HeadlessSelectProps>(functio
 
         // Disabled state
         'has-[[data-disabled]]:opacity-50 before:has-[[data-disabled]]:bg-zinc-950/5 before:has-[[data-disabled]]:shadow-none',
-      ])}
+      )}
     >
       <HeadlessSelect
         ref={ref}
         multiple={multiple}
         {...props}
-        className={classNames([
+        className={classNames(
           // Basic layout
           'relative block w-full appearance-none rounded-lg py-[calc(theme(spacing[2.5])-1px)] sm:py-[calc(theme(spacing[1.5])-1px)]',
 
@@ -61,7 +61,7 @@ export const Select = forwardRef<HTMLSelectElement, HeadlessSelectProps>(functio
 
           // Disabled state
           'data-[disabled]:border-zinc-950/20 data-[disabled]:opacity-100 dark:data-[hover]:data-[disabled]:border-white/15 data-[disabled]:dark:border-white/15 data-[disabled]:dark:bg-white/[2.5%]',
-        ])}
+        )}
       />
       {!multiple && (
         <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">

@@ -6,10 +6,10 @@ import { UserModel } from '../contracts/user_model';
 export const userApi = createApi({
   reducerPath: 'userApi',
   baseQuery,
-  tagTypes: ['users'],
+  tagTypes: ['users', 'user'],
   endpoints: (builder) => ({
-    getUser: builder.query<any, void>({
-      query: () => `/authentication/me`
+    getUser: builder.query<UserModel, string | undefined>({
+      query: (id: string) => `/users/${id}?includeRole=true`,
     }),
     getUsers: builder.query<PaginatedResource<UserModel>, { page: number, size: number }>({
       query: () => '/users?includeRole=true'
@@ -24,4 +24,4 @@ export const userApi = createApi({
   })
 })
 
-export const { useGetUsersQuery } = userApi
+export const { useGetUsersQuery, useGetUserQuery } = userApi

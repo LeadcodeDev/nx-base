@@ -67,13 +67,9 @@ export function BackofficeUsersListPage(): ReactElement {
                         <div className="i-radix-icons:dots-vertical w-1em h-1em"></div>
                       </HeadlessMenuButton>
                       <DropdownMenu>
-                        <DropdownItem href={`/accounts/users/${user.id}`}>
+                        <DropdownItem href={`/accounts/users/${user.id}/profile`}>
                           <div className="i-radix-icons:eye-open w-1em h-1em mr-2"></div>
                           View
-                        </DropdownItem>
-                        <DropdownItem href={`/accounts/users/${user.id}/edit`}>
-                          <div className="i-radix-icons:pencil-2 w-1em h-1em mr-2"></div>
-                          Edit
                         </DropdownItem>
                         <DropdownItem className="bg-white hover:bg-red-200 hover:text-red-500">
                           <div className="i-radix-icons:trash w-1em h-1em hover:text-red-500 mr-2"></div>
