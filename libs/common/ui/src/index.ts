@@ -22,3 +22,5 @@ export * from './lib/components/select'
 export * from './lib/components/switch'
 export * from './lib/components/text'
 export * from './lib/components/textarea'
+
+export * from './lib/components/suspense_loading'
