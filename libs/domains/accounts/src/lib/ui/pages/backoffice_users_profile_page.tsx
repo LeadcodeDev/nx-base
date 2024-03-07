@@ -28,13 +28,17 @@ export function BackofficeUsersProfilePage(): ReactElement {
           title="Accounts"
           links={userProfileSubsection(user)}
           actions={[
-            <Button.Action key={1}>
-              Save
+            <Button.Action
+              onClick={() => handleSubmit()}
+              loadingMessage="Waiting to save…"
+              key={1}
+            >
+              Save account
             </Button.Action>
           ]}
         />
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={() => handleSubmit()}>
           <BackofficeContainer className="py-10 min-h-200">
             <div className="mx-auto max-w-5xl">
               <div className="grid grid-cols-6 gap-5">
