@@ -47,7 +47,9 @@ export function BackofficeUsersListPage(): ReactElement {
             <TableBody>
               {users?.data.map((user, index) => (
                 <TableRow key={index}>
-                  <TableCell className="max-w-20 font-medium">{user.username}</TableCell>
+                  <TableCell className="max-w-20 font-medium">
+                    {user.firstname} {user.lastname}
+                  </TableCell>
                   <TableCell>{user.email}</TableCell>
                   <TableCell>
                     <Badge>{user.role}</Badge>
@@ -61,11 +63,11 @@ export function BackofficeUsersListPage(): ReactElement {
                         <div className="i-radix-icons:dots-vertical w-1em h-1em"></div>
                       </HeadlessMenuButton>
                       <DropdownMenu>
-                        <DropdownItem href="/users/1">
+                        <DropdownItem href={`/accounts/users/${user.id}`}>
                           <div className="i-radix-icons:eye-open w-1em h-1em mr-2"></div>
                           View
                         </DropdownItem>
-                        <DropdownItem href="/users/1/edit">
+                        <DropdownItem href={`/accounts/users/${user.id}/edit`}>
                           <div className="i-radix-icons:pencil-2 w-1em h-1em mr-2"></div>
                           Edit
                         </DropdownItem>

@@ -10,7 +10,7 @@ export const userApi = createApi({
       query: () => `/authentication/me`
     }),
     getUsers: builder.query<any, { page: number, size: number }>({
-      query: () => '/users'
+      query: () => '/users?includeRole=true'
     }),
     login: builder.mutation<any, { username: string, password: string }>({
       query: (credentials) => ({
